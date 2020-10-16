@@ -221,10 +221,19 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ks4-DN-Fm5">
+                                <rect key="frame" x="381" y="188" width="13" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Jml-Rk-cuw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Jml-Rk-cuw" firstAttribute="trailing" secondItem="Ks4-DN-Fm5" secondAttribute="trailing" constant="20" id="ADF-CZ-XI2"/>
+                            <constraint firstItem="Ks4-DN-Fm5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Jml-Rk-cuw" secondAttribute="leading" constant="20" id="PFH-3a-xxY"/>
+                            <constraint firstItem="Ks4-DN-Fm5" firstAttribute="top" secondItem="D9t-Jf-sAO" secondAttribute="bottom" constant="4" id="Vew-N1-FSM"/>
                             <constraint firstItem="Jml-Rk-cuw" firstAttribute="trailing" secondItem="D9t-Jf-sAO" secondAttribute="trailing" id="iL9-BS-9gX"/>
                             <constraint firstItem="D9t-Jf-sAO" firstAttribute="leading" secondItem="Jml-Rk-cuw" secondAttribute="leading" id="lSc-QO-w4O"/>
                             <constraint firstItem="D9t-Jf-sAO" firstAttribute="top" secondItem="Jml-Rk-cuw" secondAttribute="top" id="mZD-DS-cDv"/>
@@ -245,6 +254,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="characterCountLabel" destination="Ks4-DN-Fm5" id="MGf-rL-OpE"/>
                         <outlet property="tweetTextView" destination="D9t-Jf-sAO" id="0pr-Zi-skI"/>
                     </connections>
                 </viewController>
