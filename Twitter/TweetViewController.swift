@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RSKPlaceholderTextView
 
 class TweetViewController: UIViewController {
 
@@ -34,6 +35,39 @@ class TweetViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         tweetTextView.becomeFirstResponder()
+        
+        self.tweetTextView.text = "Tweet something."
+        self.tweetTextView.textColor = UIColor.lightGray
+
+        self.view.addSubview(self.tweetTextView)
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Placeholder"
+            textView.textColor = UIColor.lightGray
+        }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+       // TODO: Check the proposed new text character count
+       // Allow or disallow the new text
+        // Set the max character limit
+        let characterLimit = 140
+
+        // Construct what the new text would be if we allowed the user's latest edit
+        let newText = NSString(string: textView.text!).replacingCharacters(in: range, with: text)
+
+        // TODO: Update Character Count Label
+
+        // The new text should be allowed? True/False
+        return newText.count < characterLimit
     }
     
 
